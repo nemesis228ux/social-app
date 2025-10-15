@@ -27,7 +27,7 @@ const Home = () => {
             <p>Chargement...</p>
           ) : (
             posts.map((post) => (
-              <PostCard data={post} />
+              <PostCard aPost={post} />
             ))
           )
         }

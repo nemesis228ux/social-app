@@ -2,6 +2,7 @@ import { FaUser } from "react-icons/fa";
 import { GoHomeFill } from "react-icons/go";
 import { FaRegSquarePlus } from "react-icons/fa6";
 import { BiSearch } from "react-icons/bi";
+import { IoAlbumsOutline } from "react-icons/io5";
 
 const AppBar = ({setCurrentPage}) => {
 
@@ -15,6 +16,9 @@ const AppBar = ({setCurrentPage}) => {
         } className="mx-4 text-2xl cursor-pointer" />
         <BiSearch className="mx-4 text-2xl cursor-pointer" />
         <FaRegSquarePlus className="mx-4 text-2xl cursor-pointer" />
+        <IoAlbumsOutline onClick={() =>
+          setCurrentPage("pictures")
+        } className="mx-4 text-2xl cursor-pointer" />
         <FaUser className="mx-4 text-2xl cursor-pointer" />
       </div>
     </>

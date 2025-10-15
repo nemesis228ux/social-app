@@ -1,0 +1,39 @@
+import { useEffect, useState } from "react";
+import PostCard from "../components/PostCad/PostCard";
+import { getPosts } from "../api/posts"
+
+const Home = () => {
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const FetchPost = async () => {
+      try{
+        const res = await getPosts();
+        setPosts(res.data);
+      } catch (e) {
+        console.log(`Error de récuperation des posts: ${e}`)
+      }
+    };
+
+    FetchPost();
+  }, [])
+
+  return(
+    <>
+      <div >
+        {
+          posts.length == 0 ? (
+            <p>Chargement...</p>
+          ) : (
+            posts.map((post) => (
+              <PostCard data={post} />
+            ))
+          )
+        }
+      </div>
+    </>
+  )
+}
+
+export default Home;

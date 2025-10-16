@@ -14,7 +14,9 @@ const AppBar = ({setCurrentPage}) => {
         <GoHomeFill onClick={() => 
           setCurrentPage("home")
         } className="mx-4 text-2xl cursor-pointer" />
-        <BiSearch className="mx-4 text-2xl cursor-pointer" />
+        <BiSearch onClick={() => 
+          setCurrentPage("search")
+        } className="mx-4 text-2xl cursor-pointer" />
         <FaRegSquarePlus className="mx-4 text-2xl cursor-pointer" />
         <IoAlbumsOutline onClick={() =>
           setCurrentPage("pictures")

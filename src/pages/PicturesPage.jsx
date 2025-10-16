@@ -55,7 +55,8 @@ const PicturesPage = () => {
   return(
     <div>
       {
-        photos.length === 0 ? (<p>Chargement...</p>) :
+        photos.length === 0 ? (<p className=" text-center
+            text-gray-400 text-sm mt-8">Chargement...</p>) :
         (
           photos.map((photo) => (<ImageCard user={user} photo={photo} key={photo.id} />))
         )

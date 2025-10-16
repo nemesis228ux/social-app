@@ -24,7 +24,8 @@ const Home = () => {
       <div >
         {
           posts.length == 0 ? (
-            <p>Chargement...</p>
+            <p className=" text-center
+            text-gray-400 text-sm mt-8">Chargement...</p>
           ) : (
             posts.map((post) => (
               <PostCard aPost={post} />

@@ -6,6 +6,8 @@ import { TbMessageCircle } from "react-icons/tb";
 import { RiTelegram2Line } from "react-icons/ri";
 import { FaRegBookmark } from "react-icons/fa6";
 import { getUserById } from "../../api/users";
+import { FaUser } from "react-icons/fa";
+import Button from "../Shared/Button";
 
 
 const PostCard = ({aPost}) => {
@@ -14,6 +16,11 @@ const PostCard = ({aPost}) => {
   const [counter, setCounter] = useState(0);
   const [user, setUser] = useState({})
   const [save, setSave] = useState(false)
+  const [follow, setFollow] = useState(false)
+
+  function handleFollow() {
+    setFollow(!follow)
+  }
 
   function handleHeartLike() {
     setHeartColor(!heartColor)
@@ -45,9 +52,34 @@ const PostCard = ({aPost}) => {
   return (
     <>
       <div className="text-white/80 mb-6 p-5 border-b border-gray-800/90" key={aPost.id}>
-        <div className="mb-2 border-b border-gray-400/40">
-          <h1 className="text-md italic text-gray-500">{user.username} a publié</h1>
-          <p className="text-sm/tight italic text-gray-500">habite a {user?.address?.city}</p>
+        {/**User infos section */}
+        <div className="flex items-center justify-between gap-4 mb-2 border-b border-gray-400/40">
+          <div className="flex items-center justify-between gap-4">
+            <div className="bg-gray-300 p-2 rounded-full mb-1 cursor-pointer">
+              <FaUser size={21} className="text-gray-500"/>
+            </div>
+            <div>
+              <h1 className="text-md italic text-gray-500">{user.username} a publié</h1>
+              <p className="text-sm/tight italic text-gray-500">habite a {user?.address?.city}</p>
+            </div>
+          </div>
+          <div onClick={handleFollow}>
+            {
+              follow === true ? (
+                <Button 
+                text={"Following"}
+                textColor={"#fff"}
+                bgColor={"rgb(7, 6, 6)"}
+                />
+              ) : (
+                <Button 
+                text={"Follow"}
+                textColor={"#000"}
+                bgColor={"#fff"}
+                />
+              )
+            }
+          </div>
         </div>
         {/**Data display section */}
         <div className="flex flex-col items-start gap-3">

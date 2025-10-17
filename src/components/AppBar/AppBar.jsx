@@ -21,7 +21,9 @@ const AppBar = ({setCurrentPage}) => {
         <IoAlbumsOutline onClick={() =>
           setCurrentPage("pictures")
         } className="mx-4 text-2xl cursor-pointer" />
-        <FaUser className="mx-4 text-2xl cursor-pointer" />
+        <FaUser onClick={() => 
+          setCurrentPage("account")
+        } className="mx-4 text-2xl cursor-pointer" />
       </div>
     </>
   );

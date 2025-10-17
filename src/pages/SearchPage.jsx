@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import SearchBar from "../components/SearchBar/SearchBar"
 import { getPosts } from "../api/posts";
-import PostCard from "../components/PostCad/PostCard";
+import PostCard from "../components/PostCard/PostCard";
 
 
 export default function SearchPage() {

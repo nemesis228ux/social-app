@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa6";
-import { FaBookmark } from "react-icons/fa";
+import { FaBookmark, FaUser } from "react-icons/fa";
 import { TbMessageCircle } from "react-icons/tb";
 import { RiTelegram2Line } from "react-icons/ri";
 import { FaRegBookmark } from "react-icons/fa6";
@@ -36,9 +36,14 @@ const ImageCard = ({user, photo}) => {
   return (
     <>
       <div className="text-white/80 mb-6 p-5 border-b border-gray-800/90" >
-        <div className="mb-2 border-b border-gray-400/40">
-          <h1 className="text-md italic text-gray-500">{user.username} a publié</h1>
-          <p className="text-sm/tight italic text-gray-500">habite a {user?.address?.city}</p>
+        <div className="flex items-center gap-4 mb-2 border-b border-gray-400/40">
+          <div className="bg-gray-300 p-2 rounded-full mb-1 cursor-pointer">
+            <FaUser size={21} className="text-gray-500"/>
+          </div>
+          <div>
+            <h1 className="text-md italic text-gray-500">{user.username} a publié</h1>
+            <p className="text-sm/tight italic text-gray-500">habite a {user?.address?.city}</p>
+          </div>
         </div>
         {/**Data display section */}
         <div className="flex flex-col items-start gap-3">

@@ -4,6 +4,7 @@ import { useState } from "react";
 import PicturesPage from "./pages/PicturesPage";
 import SearchPage from "./pages/SearchPage";
 import AccountPage from "./pages/AcountPage";
+import CreatePost from "./pages/Create_post_page";
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
         {currentView === "pictures" && <PicturesPage/>}
         {currentView === "search" && <SearchPage/>}
         {currentView === "account" && <AccountPage/>}
+        {currentView === "create" && <CreatePost/>}
 
         <AppBar setCurrentPage={setCurrentView} />
       </div>
